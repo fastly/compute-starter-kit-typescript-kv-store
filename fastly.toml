@@ -1,21 +1,33 @@
 # This file describes a Fastly Compute@Edge package. To learn more visit:
 # https://developer.fastly.com/reference/fastly-toml/
 
-authors = ["oss@fastly.com"]
+authors = ["jchampion@fastly.com"]
 description = ""
 language = "javascript"
 manifest_version = 2
-name = "object-store-typescript-example"
-service_id = ""
+name = "object-store-typescript-starter-kit"
+service_id = "eMNpHQu2BZdl9kynE3SKZ7"
 
 [local_server]
-[[local_server.object_store.my-store]]
-  key  = "placeholder"
-  data = "placeholder"
 
-[[local_server.object_store.my-store]]
-  key = "readme"
-  path  = "./README.md"
+  [local_server.backends]
+
+  [local_server.object_store]
+
+    [[local_server.object_store.my-store]]
+      data = "placeholder"
+      key = "placeholder"
+
+    [[local_server.object_store.my-store]]
+      key = "readme"
+      path = "./README.md"
 
 [scripts]
   build = "npm run build"
+
+[setup]
+
+  [setup.object_stores]
+
+    [setup.object_stores.my-store]
+      description = "My first object store"
