@@ -1,4 +1,4 @@
-# Object Store TypeScript Template
+# Compute Starter Kit TypeScript Object Store
 
 Fastly Object Store is a globally consistent key-value storage accessible across the Fastly Network. This makes it possible for your Compute@Edge application to read and write from Object-stores. The application shows how to use Fastly Object Store within a TypeScript Compute@Edge application.
 
