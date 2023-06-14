@@ -1,4 +1,4 @@
-import { ObjectStore } from "fastly:object-store";
+import { KVStore } from "fastly:kv-store";
 import { env } from "fastly:env";
 
 export async function app(event: FetchEvent) {
@@ -7,11 +7,11 @@ export async function app(event: FetchEvent) {
     console.log(`FASTLY_SERVICE_VERSION: ${env('FASTLY_SERVICE_VERSION') || 'local'}`);
 
     /**
-        Construct an ObjectStore instance which is connected to the Object Store named `my-store`
+        Construct an KVStore instance which is connected to the KV Store named `my-store`
 
-        [Documentation for the ObjectStore constuctor can be found here](https://js-compute-reference-docs.edgecompute.app/docs/fastly:object-store/ObjectStore/)
+        [Documentation for the KVStore constuctor can be found here](https://js-compute-reference-docs.edgecompute.app/docs/fastly:kv-store/KVStore/)
     */
-    const store = new ObjectStore('my-store');
+    const store = new KVStore('my-store');
 
     const path = (new URL(event.request.url)).pathname;
     if (path === '/readme') {
@@ -26,24 +26,24 @@ export async function app(event: FetchEvent) {
     }
 
     /**
-        Adds or updates the key `hello` in the Object Store with the value `world`.
+        Adds or updates the key `hello` in the KV Store with the value `world`.
         
-        Note: Object stores are eventually consistent, this means that the updated value associated
+        Note: KV stores are eventually consistent, this means that the updated value associated
         with the key may not be available to read from all edge locations immediately and some edge
         locations may continue returning the previous value associated with the key.
 
-        [Documentation for the put method can be found here](https://js-compute-reference-docs.edgecompute.app/docs/fastly:object-store/ObjectStore/prototype/put)
+        [Documentation for the put method can be found here](https://js-compute-reference-docs.edgecompute.app/docs/fastly:kv-store/KVStore/prototype/put)
     */
     await store.put('hello', 'world');
 
     /**
-        Retrieve the value associated with the key `hello` in the Object Store.
+        Retrieve the value associated with the key `hello` in the KV Store.
         If the key does not exist, then `null` is returned.
-        If the key does exist, then an `ObjectStoreEntry` is returned.
+        If the key does exist, then an `KVStoreEntry` is returned.
         
-        `ObjectStoreEntry` is similar to `Response`, both have `text`/`json`/`arrayBuffer` methods and both return a ReadableStream via their `body` property.
+        `KVStoreEntry` is similar to `Response`, both have `text`/`json`/`arrayBuffer` methods and both return a ReadableStream via their `body` property.
 
-        [Documentation for the get method can be found here](https://js-compute-reference-docs.edgecompute.app/docs/fastly:object-store/ObjectStore/prototype/get)
+        [Documentation for the get method can be found here](https://js-compute-reference-docs.edgecompute.app/docs/fastly:kv-store/KVStore/prototype/get)
      */
     const entry = await store.get('hello');
 
