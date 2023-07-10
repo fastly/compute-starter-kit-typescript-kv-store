@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@fastly/expressly": "^1.1.0",
-    "@fastly/js-compute": "^1.1.0"
+    "@fastly/js-compute": "^3.0.0"
   },
   "scripts": {
     "prebuild": "webpack",
