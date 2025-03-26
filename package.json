@@ -1,17 +1,12 @@
 {
-  "name": "kv-store-typescript-example",
-  "author": "oss@fastly.com",
-  "license": "MIT",
   "type": "module",
-  "engines": {
-    "node": "^18.0.0"
+  "private": true,
+  "dependencies": {
+    "@fastly/js-compute": "^3.33.2"
   },
   "devDependencies": {
-    "@fastly/cli": "^10.14.0",
+    "@fastly/cli": "^11.0.0",
     "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "@fastly/js-compute": "^3.0.0"
   },
   "scripts": {
     "prebuild": "tsc",
