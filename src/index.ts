@@ -1,6 +1,6 @@
 /// <reference types="@fastly/js-compute" />
 
-import { app } from "./app";
+import { app } from "./app.js";
 
 /**
     Attach a FetchEventListener, this is the entry point to all Fastly JavaScript Compute@Edge applications
