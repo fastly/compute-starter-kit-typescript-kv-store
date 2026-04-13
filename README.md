@@ -1,8 +1,8 @@
 # Compute Starter Kit TypeScript KV Store
 
-Fastly KV Store is a globally consistent key-value storage accessible across the Fastly Network. This makes it possible for your Compute@Edge application to read and write from KV Stores. The application shows how to use Fastly KV Store within a TypeScript Compute@Edge application.
+Fastly KV Store is a globally consistent key-value storage accessible across the Fastly Network. This makes it possible for your Compute application to read and write from KV Stores. The application shows how to use Fastly KV Store within a TypeScript Compute application.
 
-**For more details about other starter kits for Compute@Edge, see the [Fastly developer hub](https://developer.fastly.com/solutions/starters)**
+**For more details about other starter kits for Compute, see the [Fastly developer hub](https://developer.fastly.com/solutions/starters)**
 
 ## Understanding the code
 

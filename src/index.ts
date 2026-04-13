@@ -3,7 +3,7 @@
 import { app } from "./app.js";
 
 /**
-    Attach a FetchEventListener, this is the entry point to all Fastly JavaScript Compute@Edge applications
+    Attach a FetchEventListener, this is the entry point to all Fastly Compute JavaScript applications
  */
 addEventListener("fetch", (event) => {
     event.respondWith(
